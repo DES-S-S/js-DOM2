@@ -1,1 +1,131 @@
-"Enter your styles here"
+:root {
+    --bg-side: #27263D;
+    --bg-main: #6E6C78;
+    --bg-card: #3B3A3D;
+    --accent: #7AA899;
+    --accent-hover: #8B7AA8;
+    --text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--bg-side);
+    padding: 30px 20px;
+    border-right: 2px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.logo h1 {
+    margin: 0 0 40px 0;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.controls button {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--accent);
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.controls button:hover {
+    background-color: var(--accent);
+    color: var(--bg-side);
+    transform: translateX(5px);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.3);
+    border-radius: 0;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px rgba(0,0,0,0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.info {
+    padding: 15px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+#status {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .content {
+        margin-left: 0;
+    }
+}

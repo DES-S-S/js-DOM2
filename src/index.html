@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Gallery</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Галерея фотографій</title>
 </head>
 <body>
-    <header>
-        <h1>FOTO IMAGE LIST</h1>
-    </header>
-    <main>
-        <div id="gallery" class="gallery"></div>
-        <div class="buttons">
-            <button id="loadMore">Завантажити ще 4 картинки</button>
-            <button id="clearGallery">Очистити галерею</button>
-            <button id="removeLast">Видалити останню картинку</button>
-            <button id="reverseGallery">Перевернути галерею</button>
-            <button id="shuffleGallery">Перемішати галерею</button>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>ГАЛЕРЕЯ</h1>
         </div>
+        <nav class="controls">
+            <button id="loadBtn">ЗАВАНТАЖИТИ ЩЕ</button>
+            <button id="clearBtn">ОЧИСТИТИ ВСЕ</button>
+            <button id="removeBtn">ВИДАЛИТИ ОСТАННЮ</button>
+            <button id="reverseBtn">ПЕРЕВЕРНУТИ</button>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <div id="gallery" class="grid"></div>
+        <p id="status">Завантаження...</p>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
